@@ -4,7 +4,7 @@
 
 Based on [@hexagon/base64](https://github.com/hexagon/base64) but adapted to TypeScript and jsr.io, dropping all the legacy tooling.
 
-**NOTE:** If not bound tothe specific features of this library (like validation, or decoding directly to a string), you might be better off using
+**NOTE:** If not bound to the specific features of this library (like validation, or decoding directly to a string), you might be better off using
 [https://jsr.io/@std/encoding](https://jsr.io/@std/encoding).
 
 **Key Features:**
