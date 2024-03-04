@@ -1,6 +1,6 @@
 {
   "name": "@cross/base64",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "exports": "./mod.ts",
   "fmt": {
     "lineWidth": 200

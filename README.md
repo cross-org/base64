@@ -4,6 +4,8 @@
 
 Based on [@hexagon/base64](https://github.com/hexagon/base64) but adapted to TypeScript and jsr.io, dropping all the legacy tooling.
 
+**NOTE:** If not bound to any of the specific features of this library (like validation, or decoding directly to a string), you might be better off using [https://jsr.io/@std/encoding](https://jsr.io/@std/encoding).
+
 **Key Features:**
 
 - **Cross-Platform Power:** Effortlessly encode and decode Base64 data in Deno, Node.js, Bun, and your favorite browsers.
@@ -19,15 +21,18 @@ See [jsr.io/@cross/base64](https://jsr.io/@cross/base64)
 **Usage:**
 
 ```javascript
-import base64 from "jsr:@cross/base64@latest"; // jsr.io example
+// See jsr.io/@cross/base64 for installation instructions
+import { fromString, toString } from "jsr:@cross/base64";
 
 // Encode string as regular base64
-const example1enc = base64.fromString("Hellö Wörld, how are you doing today?!");
+// - Use the second parameter to enable/disable base64url
+const example1enc = fromString("Hellö Wörld, how are you doing today?!", true);
 console.log(example1enc);
-// > SGVsbMO2IFfDtnJsZCwgaG93IGFyZSB5b3UgZG9pbmcgdG9kYXk/IQ==
+// > SGVsbMO2IFfDtnJsZCwgaG93IGFyZSB5b3UgZG9pbmcgdG9kYXk_IQ
 
 // Decode string as regular base64
-const example1dec = base64.toString("SGVsbMO2IFfDtnJsZCwgaG93IGFyZSB5b3UgZG9pbmcgdG9kYXk/IQ==");
+// - Use the second parameter to enable/disable base64url
+const example1dec = toString("SGVsbMO2IFfDtnJsZCwgaG93IGFyZSB5b3UgZG9pbmcgdG9kYXk_IQ", true);
 console.log(example1dec);
 // > Hellö Wörld, how are you doing today?!
 //
