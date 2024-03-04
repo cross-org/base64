@@ -26,11 +26,17 @@
 
   ------------------------------------------------------------------------------------  */
 
-// Constants (Note: these can be defined within the `base64` namespace if preferred)
+/** A string containing standard base64 characters */
 const chars: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+/** A string containing base64url characters */
 const charsUrl: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
 
-// Define a reusable type for (target: string) => Uint8Array
+/**
+ * Function type for generating a lookup table
+ * @param target The target string of characters
+ * @returns A Uint8Array lookup table
+ */
 const genLookup: (target: string) => Uint8Array = (target: string) => {
   const lookupTemp = new Uint8Array(256);
 
@@ -40,14 +46,22 @@ const genLookup: (target: string) => Uint8Array = (target: string) => {
   return lookupTemp;
 };
 
+/** Lookup table for standard base64 characters */
 const lookup: Uint8Array = genLookup(chars);
+
+/** Lookup table for base64url characters */
 const lookupUrl: Uint8Array = genLookup(charsUrl);
 
 // Regular Expressions
 const base64UrlPattern = /^[-A-Za-z0-9\-_]*$/;
 const base64Pattern = /^[-A-Za-z0-9+/]*={0,3}$/;
 
-// The base64 Namespace
+/**
+ * Converts a base64 encoded string to an ArrayBuffer
+ * @param data Base64 encoded string
+ * @param urlMode If true, expects a base64url encoded string
+ * @returns The decoded data as an ArrayBuffer.
+ */
 export const toArrayBuffer = (
   data: string,
   urlMode: boolean = false,
@@ -82,6 +96,15 @@ export const toArrayBuffer = (
   return arraybuffer;
 };
 
+/**
+ * Decodes a base64 or base64url encoded ArrayBuffer into a regular string.
+ *
+ * @param arrBuf - The ArrayBuffer containing the encoded data.
+ * @param urlMode - (Optional) Determines decoding mode:
+ *    * `true`: Expects base64url encoding.
+ *    * `false` (Default): Expects standard base64 encoding.
+ * @returns The decoded string representation of the input data.
+ */
 export const fromArrayBuffer = (
   arrBuf: ArrayBuffer,
   urlMode: boolean = false,
@@ -110,14 +133,41 @@ export const fromArrayBuffer = (
   return result;
 };
 
+/**
+ * Converts a base64 or base64url encoded string into a decoded text string.
+ *
+ * @param str - The base64/base64url encoded string to decode.
+ * @param urlMode - (Optional) Determines decoding mode:
+ *   * `true`: Expects base64url encoding.
+ *   * `false` (Default): Expects standard base64 encoding.
+ * @returns The decoded text string.
+ */
 export const toString = (str: string, urlMode: boolean = false): string => {
   return new TextDecoder().decode(toArrayBuffer(str, urlMode));
 };
 
+/**
+ * Encodes a regular text string into a base64 or base64url representation.
+ *
+ * @param str - The text string to encode.
+ * @param urlMode - (Optional) Determines encoding mode:
+ *   * `true`: Produces base64url encoded output.
+ *   * `false` (Default): Produces standard base64 encoded output.
+ * @returns The base64/base64url encoded string.
+ */
 export const fromString = (str: string, urlMode: boolean = false): string => {
   return fromArrayBuffer(new TextEncoder().encode(str), urlMode);
 };
 
+/**
+ * Checks whether a given string is valid base64 or base64url encoded data.
+ *
+ * @param encoded - The string to validate.
+ * @param urlMode - (Optional) Determines validation mode:
+ *   * `true`: Validates against base64url format.
+ *   * `false` (Default): Validates against standard base64 format.
+ * @returns `true` if the string is valid base64/base64url, `false` otherwise.
+ */
 export const validate = (
   encoded: string,
   urlMode: boolean = false,
