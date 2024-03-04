@@ -26,4 +26,4 @@ jobs:
         run: deno lint
 
       - name: Check types
-        run: deno check webdiff.ts
+        run: deno check mod.ts

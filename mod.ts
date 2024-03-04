@@ -30,7 +30,8 @@
 const chars: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 const charsUrl: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
 
-const genLookup = (target: string) => {
+// Define a reusable type for (target: string) => Uint8Array
+const genLookup: (target: string) => Uint8Array = (target: string) => {
   const lookupTemp = new Uint8Array(256);
 
   for (let i = 0; i < target.length; i++) {
@@ -39,8 +40,8 @@ const genLookup = (target: string) => {
   return lookupTemp;
 };
 
-const lookup = genLookup(chars);
-const lookupUrl = genLookup(charsUrl);
+const lookup: Uint8Array = genLookup(chars);
+const lookupUrl: Uint8Array = genLookup(charsUrl);
 
 // Regular Expressions
 const base64UrlPattern = /^[-A-Za-z0-9\-_]*$/;
