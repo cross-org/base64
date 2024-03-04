@@ -12,6 +12,10 @@ Based on [https://github.com/hexagon/base64](@hexagon/base64) but adapted to jsr
 * **Validation:** Conveniently check the validity of Base64 and Base64url strings.
 * **TypeScript Support:** Enhanced development experience with included TypeScript typings.
 
+**Installation:**
+
+See [https://jsr.io/@cross/base64](jsr.io/@cross/base64)
+
 **Usage:**
 
 ```javascript
