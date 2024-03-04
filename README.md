@@ -4,16 +4,16 @@
 
 Based on [@hexagon/base64](https://github.com/hexagon/base64) but adapted to TypeScript and jsr.io, dropping all the legacy tooling.
 
-**NOTE:** If not bound to any of the specific features of this library (like validation, or decoding directly to a string), you might be better off using
+**NOTE:** If not bound tothe specific features of this library (like validation, or decoding directly to a string), you might be better off using
 [https://jsr.io/@std/encoding](https://jsr.io/@std/encoding).
 
 **Key Features:**
 
-- **Cross-Platform Power:** Effortlessly encode and decode Base64 data in Deno, Node.js, Bun, and your favorite browsers.
-- **Format Flexibility:** Works with both regular Base64 and Base64url.
-- **Data Versatility:** Smoothly convert between strings and ArrayBuffers.
-- **Validation:** Conveniently check the validity of Base64 and Base64url strings.
-- **TypeScript Support:** Enhanced development experience with included TypeScript typings.
+- Encode and decode Base64 data in Deno, Node.js, Bun, and your favorite browsers.
+- Works with both regular Base64 and Base64url.
+- Smoothly convert between strings and ArrayBuffers.
+- Check the validity of Base64 and Base64url strings.
+- TypeScript typings included.
 
 **Installation:**
 
