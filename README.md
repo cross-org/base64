@@ -2,7 +2,7 @@
 
 [![JSR Version](https://jsr.io/badges/@cross/base64)](https://jsr.io/@cross/base64) [![JSR Score](https://jsr.io/badges/@cross/base64/score)](https://jsr.io/@cross/base64/score)
 
-Based on [https://github.com/hexagon/base64](@hexagon/base64) but adapted to jsr.io, dropping all the legacy.
+Based on [@hexagon/base64](https://github.com/hexagon/base64) but adapted to TypeScript and jsr.io, dropping all the legacy tooling.
 
 **Key Features:**
 
@@ -14,7 +14,7 @@ Based on [https://github.com/hexagon/base64](@hexagon/base64) but adapted to jsr
 
 **Installation:**
 
-See [https://jsr.io/@cross/base64](jsr.io/@cross/base64)
+See [jsr.io/@cross/base64](https://jsr.io/@cross/base64)
 
 **Usage:**
 
