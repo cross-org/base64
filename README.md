@@ -1,6 +1,6 @@
 ## Cross-runtime base64/base64url library for Deno, Bun, and Node.js
 
-[![JSR Version](https://jsr.io/badges/@cross/base64)](https://jsr.io/@cross/base64) [![JSR Score](https://jsr.io/badges/@cross/base64/score)](https://jsr.io/@cross/base64/score)
+[![JSR Version](https://jsr.io/badges/@cross/base64?ver=bust)](https://jsr.io/@cross/base64) [![JSR Score](https://jsr.io/badges/@cross/base64/score?ver=bust)](https://jsr.io/@cross/base64/score)
 
 Based on [@hexagon/base64](https://github.com/hexagon/base64) but adapted to TypeScript and jsr.io, dropping all the legacy tooling.
 

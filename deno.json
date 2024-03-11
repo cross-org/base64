@@ -4,5 +4,6 @@
   "exports": "./mod.ts",
   "fmt": {
     "lineWidth": 200
-  }
+  },
+  "imports": { "@cross/test": "jsr:@cross/test@^0.0.6", "@std/assert": "jsr:@std/assert@^0.219.1" }
 }
