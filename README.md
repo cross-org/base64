@@ -2,7 +2,7 @@
 
 [![JSR Version](https://jsr.io/badges/@cross/base64?ver=bust)](https://jsr.io/@cross/base64) [![JSR Score](https://jsr.io/badges/@cross/base64/score?ver=bust)](https://jsr.io/@cross/base64/score)
 
-Based on [@hexagon/base64](https://github.com/hexagon/base64) but adapted to TypeScript and jsr.io, dropping all the legacy tooling.
+Based on [@hexagon/base64](https://github.com/hexagon/base64) but adapted to TypeScript and jsr.io, dropping all the legacy tooling. Part of the @cross suite - check out our growing collection of cross-runtime tools at [github.com/cross-org](https://github.com/cross-org).
 
 **NOTE:** If not bound to the specific features of this library (like validation, or decoding directly to a string), you might be better off using
 [https://jsr.io/@std/encoding](https://jsr.io/@std/encoding).
