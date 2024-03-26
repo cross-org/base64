@@ -1,7 +1,6 @@
-import * as base64 from "./mod.ts";
-
-import { test } from "@cross/test";
 import { assertEquals } from "@std/assert";
+import { test } from "@cross/test";
+import * as base64 from "./mod.ts";
 
 test("Encode 'Hello world'", function () {
   const result = base64.fromString("Hello world");
